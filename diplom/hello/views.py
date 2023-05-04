@@ -1,12 +1,18 @@
 # from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 
-def index(request):
-    return HttpResponse("<h2>Главная страница</h2>")
+def set(request):
+    username = request.GET.get("username", "Undefined")
+    response = HttpResponse(f"Hello {username}")
+    response.set_cookie("username", username)
+    return response
 
 
-def user(request):
-    age = request.GET.get("age", 0)
-    name = request.GET.get("name", "jopa")
-    return HttpResponse(f"<h2>Имя: {name} Возраст: {age}</h2>")
+def get(request):
+    username = request.COOKIES["username"]
+    return HttpResponse(f"Hello {username}")
+
+
+def get(request):
+    return False
