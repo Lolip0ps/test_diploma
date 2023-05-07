@@ -1,18 +1,15 @@
-# from django.shortcuts import render
+from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from datetime import datetime
 
 
-def set(request):
-    username = request.GET.get("username", "Undefined")
-    response = HttpResponse(f"Hello {username}")
-    response.set_cookie("username", username)
-    return response
+def index(request):
+    return render(request, "index.html", context={"my_date": datetime.now()})
 
 
-def get(request):
-    username = request.COOKIES["username"]
-    return HttpResponse(f"Hello {username}")
+def about(request):
+    return render(request, "about.html")
 
 
-def get(request):
-    return False
+def contact(request):
+    return render(request, "contact.html")
