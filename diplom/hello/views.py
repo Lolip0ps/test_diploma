@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 def index(request):
-    return render(request, "index.html", context={"my_date": datetime.now()})
+    return render(request, "index.html")
 
 
 def about(request):

@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h2>Contact Ilya Logunov</h2>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Контакты{% endblock title %}
+{% block header %}Контакты{% endblock header %}
+
+{% block content %}
+<p>Телефон: +12345677890</p>
+<p>Email: admin@admin.com</p>
+{% endblock content %}
