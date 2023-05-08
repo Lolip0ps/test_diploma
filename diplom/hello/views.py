@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from .forms import UserForm
 from django.http import HttpResponse, JsonResponse
-from datetime import datetime
 
 
 def index(request):
-    return render(request, "index.html")
+    userform = UserForm()
+    return render(request, "index.html", {"form": userform})
 
 
 def about(request):
